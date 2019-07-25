@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.MainActivity">
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_main_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+    >
+        <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="zapiti translate"
+                app:titleTextColor="@android:color/white"
+        />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/your_input_quest"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+
+            app:layout_constraintEnd_toStartOf="@+id/editText_input_response"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar_main_activity">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/your_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:lines="10"
+                android:maxLines="10"
+
+                android:gravity="top"
+                android:hint="Seu Texto"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editText_input_response"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/your_input_quest"
+            app:layout_constraintTop_toBottomOf="@+id/appbar_main_activity">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/responseText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:lines="10"
+                android:selectAllOnFocus="true"
+                android:maxLines="10"
+                android:gravity="top"
+                android:hint="Tradução">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_bar"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/editText_input_response"
+            app:layout_constraintBottom_toBottomOf="@+id/editText_input_response"
+            app:layout_constraintStart_toStartOf="@+id/editText_input_response"
+            app:layout_constraintEnd_toEndOf="@+id/editText_input_response"
+    />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/your_input_quest_type"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+
+            app:layout_constraintEnd_toStartOf="@+id/editText_response_quest_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_input_response"
+
+      >
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/your_input_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false"
+
+                android:gravity="top"
+                android:hint="language"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editText_response_quest_type"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toEndOf="@+id/your_input_quest_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/your_input_quest"
+     >
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_response_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false"
+
+                android:gravity="top"
+                android:hint="response"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="TRANSLATE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_response_quest_type"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
